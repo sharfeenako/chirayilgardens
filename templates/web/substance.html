@@ -1,0 +1,127 @@
+{% extends 'web/partials/base.html' %} {% load static %} {% block content %}
+<!-- Start Breadcrumb 
+    ============================================= -->
+{% comment %}
+<div class="breadcrumb-area text-center shadow dark bg-fixed text-light"
+  style="background-image: url(web/img/banner/3.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h1>Latest Blog</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="active">Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+<!-- End Breadcrumb -->
+<div class="gallery-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="site-heading text-center">
+          <h5 class="sub-title pt-5">CULTIVATION AIDS</h5>
+          <h2 class="title">Enhancing Health with Fertilizers & Plant Medicines</h2>
+          <div class="devider"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Start Blog 
+    ============================================= -->
+    <div class="container mb-5 pb-5">
+      <div class="row">
+          <div class="col-lg-12">
+            <h2 class="title pb-3">Fertilizers</h2>
+            <ul class="vt-products text-center columns-4">
+
+              <!-- Single product -->
+              {% for fertilizer in fertilizer %}
+              <li class="product">
+                  <div class="product-contents">
+                      <div class="product-image">
+                        <a href="{% url 'web:fertilizer_detail' fertilizer.id %}">
+                              <img src="{{fertilizer.image.url}}" alt="Product">
+                        </a>
+                          
+                      </div>
+                      <div class="product-caption">
+                          
+                          <h4 class="product-title">
+                            <a href="{% url 'web:fertilizer_detail' fertilizer.id %}">
+                              {{fertilizer.name}}</a>
+                          </h4>
+                         {% comment %} <div class="product-tags">
+                              <a href=""></a>
+                          </div>  {% endcomment %}
+                          <div class="price">
+                          
+                            <span>₹ {{fertilizer.price}}</span>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              {% endfor %}
+              
+            </div>
+
+          </ul>
+          <div class="col-lg-12">
+            <h2 class="title pb-3">Medicines</h2>
+          <ul class="vt-products text-center columns-4">
+
+            <!-- Single product -->
+            {% for medicine in medicine %}
+            <li class="product">
+                <div class="product-contents">
+                    <div class="product-image">
+                      <a href="{% url 'web:medicine_detail' medicine.id %}">
+                            <img src="{{medicine.image.url}}" alt="Product">
+                      </a>
+                        
+                    </div>
+                    <div class="product-caption">
+                      
+
+                        <h4 class="product-title">
+                          <a href="{% url 'web:medicine_detail' medicine.id %}">{{medicine.name}}</a>
+                        </h4>
+                      
+                       {% comment %} <div class="product-tags">
+                           
+                        </div>  {% endcomment %}
+                        <div class="price">
+                      
+
+                            <span>₹ {{medicine.price}}</span>
+                          </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+            
+          </div>
+
+        </ul>
+      </div>
+      
+      </div>
+      {% comment %} <center>
+          <div class="align-center">
+              <a class="btn btn-theme mt-5 btn-md radius animation"
+                                  href="{% url 'web:shop' %}">View More</a>
+          </div>
+      </center> {% endcomment %}
+  </div>
+   
+  </div>
+</div>
+
+{% endblock %}

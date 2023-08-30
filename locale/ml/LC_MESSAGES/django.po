@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-28 17:24+0530\n"
+"PO-Revision-Date: 2023-08-28 17:25+0530\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: templates/web/index.html:39
+msgid "Growing Green, Harvesting Health"
+msgstr "വളരുന്ന പച്ച, വിളവെടുപ്പ് ആരോഗ്യം"
+
+#: templates/web/index.html:45
+msgid ""
+" Welcome to our Organic Plants Garden, where nature's goodness\n"
+"                                thrives and sustainable practices flourish. At our garden, we\n"
+"                                embrace the principles of organic farming and gardening to\n"
+"                                provide you with the healthiest, most nourishing plants while\n"
+"                                protecting the environment. We prioritize the well-being of\n"
+"                                our soil, enriching it with natural compost, organic matter,\n"
+"                                and beneficial microorganisms. Healthy soil fosters robust\n"
+"                                plant growth and enhances nutrient absorption. Discover a\n"
+"                                fragrant assortment of basil, thyme, mint, and more, perfect\n"
+"                                for enhancing your culinary creations and soothing your\n"
+"                                senses."
+msgstr ""
+"പ്രകൃതിയുടെ നന്മ നിറഞ്ഞ ഞങ്ങളുടെ ഓർഗാനിക് പ്ലാന്റ്സ് ഗാർഡനിലേക്ക് സ്വാഗതം\n"
+"സുസ്ഥിരമായ സമ്പ്രദായങ്ങൾ തഴച്ചുവളരുന്നു. ഞങ്ങളുടെ പൂന്തോട്ടത്തിൽ, ഞങ്ങൾ\n"
+"ജൈവകൃഷിയുടെയും പൂന്തോട്ടപരിപാലനത്തിന്റെയും തത്വങ്ങൾ സ്വീകരിക്കുക\n"
+"നിങ്ങൾക്ക് ഏറ്റവും ആരോഗ്യകരവും പോഷകപ്രദവുമായ സസ്യങ്ങൾ നൽകുന്നു\n"
+"പരിസ്ഥിതി സംരക്ഷിക്കുന്നു. യുടെ ക്ഷേമത്തിനാണ് ഞങ്ങൾ മുൻഗണന നൽകുന്നത്\n"
+"നമ്മുടെ മണ്ണ്, പ്രകൃതിദത്ത കമ്പോസ്റ്റ്, ജൈവവസ്തുക്കൾ എന്നിവയാൽ സമ്പുഷ്ടമാക്കുന്നു\n"
+"ഗുണം ചെയ്യുന്ന സൂക്ഷ്മാണുക്കളും. ആരോഗ്യമുള്ള മണ്ണ് ദൃഢത വളർത്തുന്നു\n"
+"ചെടികളുടെ വളർച്ചയും പോഷകങ്ങളുടെ ആഗിരണം വർദ്ധിപ്പിക്കുകയും ചെയ്യുന്നു. കണ്ടെത്തുക എ\n"
+"തുളസി, കാശിത്തുമ്പ, പുതിന എന്നിവയും അതിലേറെയും സുഗന്ധമുള്ള ശേഖരം\n"
+"നിങ്ങളുടെ പാചക സൃഷ്ടികൾ മെച്ചപ്പെടുത്തുന്നതിനും നിങ്ങളെ ശാന്തമാക്കുന്നതിനും\n"
+"ഇന്ദ്രിയങ്ങൾ."

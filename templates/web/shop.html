@@ -1,0 +1,189 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Start Breadcrumb 
+    ============================================= -->
+{% comment %} <div class="breadcrumb-area shadow dark bg-cover text-center text-light"
+    style="background-image: url(web/img/banner/3.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1>Products</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li>Shop</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- End Breadcrumb -->
+<div class="gallery-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="text-center">
+                    <h5 class="sub-title pt-5">CUSTOMERS’ CHOICE
+                    </h5>
+                    <h2 class="title">Explore a wide selection of plants</h2>
+                    <div class="devider"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Shop 
+    ============================================= -->
+        <div class="validtheme-shop-area pb-5 mb-5">
+            <div class="container">
+                <div class="shop-listing-contentes">
+
+                    <div class="row item-flex center">
+                        
+                        <div class="col-lg-7">
+                            <div class="content">
+                                <!-- Tab Nav -->
+                                {% comment %} <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <button class="nav-link active" id="grid-tab-control" data-bs-toggle="tab"
+                                            data-bs-target="#grid-tab" type="button" role="tab" aria-controls="grid-tab"
+                                            aria-selected="true">
+                                            <i class="fas fa-th-large"></i>
+                                        </button>
+
+                                        <button class="nav-link" id="list-tab-control" data-bs-toggle="tab"
+                                            data-bs-target="#list-tab" type="button" role="tab" aria-controls="list-tab"
+                                            aria-selected="false">
+                                            <i class="fas fa-th-list"></i>
+                                        </button>
+                                    </div>
+                                </nav> {% endcomment %}
+                                <!-- End Tab Nav -->
+                            </div>
+                        </div>
+
+                        {% comment %} <div class="col-lg-5 text-right">
+                            <p>
+                                Showing 1–10 of 47 results
+                            </p>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Short by latest</option>
+                                <option value="saab">Short by Recent</option>
+                                <option value="mercedes">Short by Popular</option>
+                                <option value="audi">Short by Relevant</option>
+                            </select>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="services-style-one-carousel swiper">
+                            <!-- Additional required wrapper -->
+                            <div class="row d-flex justify-content-center">
+
+                                {% for category in category %}
+                                <div class="col-lg-6 mb-3">
+                                    <div class="card text-white">
+                                        <img src="{{category.image.url}}" class="card-img" alt="...">
+                                        <div class="card-img-overlay">
+                                            <h3 class="card-title text-light"><b>{{category.product_category}}</b></h3>
+                                            <p class="card-text text-light para">{{category.description}}</p>
+                                            <div class="button">
+                                                <a class="btn btn-theme btn-sm radius animation"
+                                                    href="{% url 'web:shop_single' category.id %}">View Products</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <!-- Single Item -->
+                                {% comment %} {% for service in service %}
+                                <div class="swiper-slide">
+                                    <div class="services-style-one">
+                                        <div class="thumb">
+                                            <img src="{{service.service_image.url}}" alt="Image Not Found">
+                                        </div>
+                                        <h5><a href="">{{service.service_name}}</a></h5>
+                                        <p>
+                                            {{service.service_detail}}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                {% endfor %} {% endcomment %}
+                                <!-- End Single Item -->
+                                <!-- Single Item -->
+                                {% comment %} <div class="swiper-slide">
+                                    <div class="services-style-one">
+                                        <div class="thumb">
+                                            <img src="{% static 'web/img/thumb/2.png' %}" alt="Image Not Found">
+                                        </div>
+                                        <h5><a href="services-details.html">Agricultural Products</a></h5>
+                                        <p>
+                                            Continue indulged speaking technical out horrible domestic position. Seeing
+                                            rather you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="services-style-one">
+                                        <div class="thumb">
+                                            <img src="{% static 'web/img/thumb/3.png' %}" alt="Image Not Found">
+                                        </div>
+                                        <h5><a href="services-details.html">Organic Products</a></h5>
+                                        <p>
+                                            Continue indulged speaking technical out horrible domestic position. Seeing
+                                            rather you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="services-style-one">
+                                        <div class="thumb">
+                                            <img src="{% static 'web/img/thumb/4.png' %}" alt="Image Not Found">
+                                        </div>
+                                        <h5><a href="services-details.html">Dairy Production</a></h5>
+                                        <p>
+                                            Continue indulged speaking technical out horrible domestic position. Seeing
+                                            rather you.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End Single Item -->
+                                <!-- Single Item -->
+                                <div class="swiper-slide">
+                                    <div class="services-style-one">
+                                        <div class="thumb">
+                                            <img src="{% static 'web/img/thumb/6.png' %}" alt="Image Not Found">
+                                        </div>
+                                        <h5><a href="services-details.html">Sweet Exotic Fruits</a></h5>
+                                        <p>
+                                            Continue indulged speaking technical out horrible domestic position. Seeing
+                                            rather you.
+                                        </p>
+                                    </div>
+                                </div> {% endcomment %}
+                                <!-- End Single Item -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row pt-5">
+                    <div class="d-flex justify-content-center">
+                        {% for catalogue in catalogue %}
+                        <a class="btn btn-theme btn-sm radius animation" href="{{catalogue.catalogue.url}}"
+                            target="_blank">Our
+                            Catalogue</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- End Shop -->
+        </div>
+    </div>
+
+    {% endblock %}

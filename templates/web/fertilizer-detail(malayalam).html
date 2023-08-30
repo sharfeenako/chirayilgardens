@@ -1,0 +1,1241 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Start Breadcrumb 
+    ============================================= -->
+{% comment %} <div class="breadcrumb-area shadow dark bg-cover text-center text-light"
+    style="background-image: url(web/img/banner/3.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1>Shop Single</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li>Shop</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- End Breadcrumb -->
+
+<!-- Start Shop 
+    ============================================= -->
+<div class="gallery-area">
+    <div class="container">
+        <div class="validtheme-shop-single-area mt-5 pt-5">
+            <div class="container">
+                <div class="product-details">
+                    <div class="row">
+                        <div class="button-container"style="margin-top:-70px;">
+
+                        <div class="button mb-5">
+                            <a class="btn btn-theme btn-sm radius animation"
+                                href="{% url 'web:fertilizer_detail_malayalam' fertilizer.id %}">Malayalam</a>
+                                <a class="btn btn-theme_active btn-sm radius animation ms-2"
+                                href="{% url 'web:fertilizer_detail' fertilizer.id %}">English</a>
+                        </div>
+                    </div>
+                        <div class="col-md-6">
+                            <div class="product-thumb">
+                                <div class="item-box">
+                                    <div class="product-item">
+                                        <a href="{{fertilizer.image.url}}" class="item popup-gallery">
+                                            <img src="{{fertilizer.image.url}}" alt="Thumb">
+                                        </a>
+                                        {% comment %} <span class="onsale theme">16%</span> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="single-product-contents">
+
+                                <h2 class="product-title">
+                                    {{fertilizer.name}}
+                                </h2>
+                                <div class="summary-top-box">
+                                    <div class="product-tags">
+                                        {{fertilizer.product_name}}
+                                    </div>
+
+                                </div>
+                                <div class="price">
+                                    <span>₹ {{fertilizer.price}}</span>
+                                </div>
+                                <div class="product-stock validthemes-in-stock">
+                                </div>
+                                <p>
+                                    {{fertilizer.description_malayalam}}</p>
+                                {% comment %} <div class="product-purchase-list">
+                                    <input type="number" id="quantity" step="1" size="5" name="quantity" min="0"
+                                        placeholder="0">
+                                    <a href="#" class="btn secondary btn-theme btn-sm animation">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Add to cart
+                                    </a>
+                                    <div class="shop-action">
+                                        <ul>
+                                            <li class="wishlist">
+                                                <a href="#"><span>Add to wishlist</span></a>
+                                            </li>
+                                            <li class="compare">
+                                                <a href="#"><span>Compare</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> {% endcomment %}
+
+                                <div class="product-estimate-delivary">
+                                    <i class="fas fa-box-open"></i>
+                                    <strong> 2-day Delivery</strong>
+                                    <span>Speedy and reliable delivery!</span>
+                                </div>
+                                <div class="product-meta">
+                                    {% comment %} <span class="sku">
+                                        <strong>SKU:</strong> BE45VGRT
+                                    </span> {% endcomment %}
+                                    {% comment %} <span class="posted-in">
+                                        <strong>Category:</strong>
+                                        <a href="#">Computer</a> ,
+                                        <a href="#">Speaker</a>,
+                                        <a href="#">Headphone</a>
+                                    </span> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+               
+          
+            
+              
+                {% comment %} <div class="single-product-bottom-info">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Tab Nav -->
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="description-tab-control" data-bs-toggle="tab"
+                                    data-bs-target="#description-tab" type="button" role="tab"
+                                    aria-controls="description-tab" aria-selected="true">
+                                    Description
+                                </button>
+
+                                <button class="nav-link" id="information-tab-control" data-bs-toggle="tab"
+                                    data-bs-target="#information-tab" type="button" role="tab"
+                                    aria-controls="information-tab" aria-selected="false">
+                                    Additional Information
+                                </button>
+                                <button class="nav-link" id="steps-tab-control" data-bs-toggle="tab"
+                                    data-bs-target="#steps-tab" type="button" role="tab" aria-controls="information-tab"
+                                    aria-selected="false">
+                                    Planting Steps
+                                </button>
+
+
+                                {% comment %} <button class="nav-link" id="review-tab-control" data-bs-toggle="tab"
+                                    data-bs-target="#review-tab" type="button" role="tab" aria-controls="review-tab"
+                                    aria-selected="false">
+                                    Review
+                                </button> 
+
+                            </div>
+                            <!-- End Tab Nav -->
+                            <!-- Start Tab Content -->
+                            <div class="tab-content tab-content-info" id="myTabContent">
+
+                                <!-- Tab Single -->
+                                <div class="tab-pane fade show active" id="description-tab" role="tabpanel"
+                                    aria-labelledby="description-tab-control">
+                                    {% comment %} <p>
+                                        There is immense scope for organic production of vegetable crops in India since
+                                        the agricultural sector has enormous organic resources like crop residues,
+                                        livestock and other bio-products from agro industries. Organic farming is
+                                        growing at a rapid pace among Indian farmers and entrepreneurs, particularly in
+                                        rainfed and hilly areas where fertilizer consumption is less than 25 kg/ha/year
+                                        [13].
+                                    </p>
+                                    <ul>
+                                        <li>Status of organic vegetable production</li>
+                                        <li>Feasibility of organic practices</li>
+                                        <li>Sustainability of organic farming</li>
+                                        <li>Organic certification</li>
+                                        <li>Prospects and constraints of organic vegetable production</li>
+                                    </ul> 
+
+                                    {{products.description|safe}}
+                                </div>
+                                <!-- End Single -->
+
+                                <!-- Tab Single -->
+                                <div class="tab-pane fade" id="information-tab" role="tabpanel"
+                                    aria-labelledby="information-tab-control">
+                                    {% comment %} <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Weight</td>
+                                                    <td>240 Ton</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions</td>
+                                                    <td>20 × 30 × 40 cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Colors</td>
+                                                    <td>Black, Blue, Green</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> 
+                                    {{products.information|safe}}
+                                </div>
+                                <div class="tab-pane fade" id="steps-tab" role="tabpanel"
+                                    aria-labelledby="steps-tab-control">
+                                    {% comment %} <p>
+                                        There is immense scope for organic production of vegetable crops in India since
+                                        the agricultural sector has enormous organic resources like crop residues,
+                                        livestock and other bio-products from agro industries. Organic farming is
+                                        growing at a rapid pace among Indian farmers and entrepreneurs, particularly in
+                                        rainfed and hilly areas where fertilizer consumption is less than 25 kg/ha/year
+                                        [13].
+                                    </p>
+                                    <ul>
+                                        <li>Status of organic vegetable production</li>
+                                        <li>Feasibility of organic practices</li>
+                                        <li>Sustainability of organic farming</li>
+                                        <li>Organic certification</li>
+                                        <li>Prospects and constraints of organic vegetable production</li>
+                                    </ul> 
+
+                                    {{products.planting_steps|safe}}
+                                </div>
+                                <!-- End Tab Single -->
+
+                                <!-- Tab Single -->
+                                {% comment %} <div class="tab-pane fade" id="review-tab" role="tabpanel"
+                                    aria-labelledby="review-tab-control">
+                                    <h4>1 review for “Fresh Red Seedless”</h4>
+                                    <div class="review-items">
+                                        <div class="item">
+                                            <div class="thumb">
+                                                <img src="web/img/farmers/3.jpg" alt="Thumb">
+                                            </div>
+                                            <div class="info">
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                                <div class="review-date">April 8, 2021</div>
+                                                <div class="review-authro">
+                                                    <h5>Aleesha Brown
+                                                    </h5>
+                                                </div>
+                                                <p>
+                                                    Highly recommended. Will purchase more in future.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="thumb">
+                                                <img src="web/img/farmers/4.jpg" alt="Thumb">
+                                            </div>
+                                            <div class="info">
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </div>
+                                                <div class="review-date">April 8, 2021</div>
+                                                <div class="review-authro">
+                                                    <h5>Sarah Albert</h5>
+                                                </div>
+                                                <p>
+                                                    Great product quality!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-form">
+                                        <h4>Add a review</h4>
+                                        <div class="rating-select">
+                                            <div class="stars">
+                                                <span>
+                                                    <a class="star-1" href="#"><i class="fas fa-star"></i></a>
+                                                    <a class="star-2" href="#"><i class="fas fa-star"></i></a>
+                                                    <a class="star-3" href="#"><i class="fas fa-star"></i></a>
+                                                    <a class="star-4" href="#"><i class="fas fa-star"></i></a>
+                                                    <a class="star-5" href="#"><i class="fas fa-star"></i></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        {% comment %} <form action="#" class="contact-form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group comments">
+                                                        <textarea class="form-control" id="comments" name="comments"
+                                                            placeholder="Tell Us About Project *"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" id="name" name="name"
+                                                            placeholder="Name" type="text">
+                                                        <span class="alert-error"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input class="form-control" id="email" name="email"
+                                                            placeholder="Email*" type="email">
+                                                        <span class="alert-error"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <button type="submit" name="submit" id="submit">
+                                                        Post Review
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Alert Message -->
+                                            <div class="col-md-12 alert-notification">
+                                                <div id="message" class="alert-msg"></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                                <!-- End Tab Single -->
+
+                            </div>
+                            <!-- End Tab Content -->
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <ul class="vt-products text-center columns-4">
+
+                    <!-- Single product -->
+
+                    
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    {% comment %} <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <span class="onsale">Sale!</span>
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/2.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Vegetables</a>
+                                    <a href="#">Winter</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Organic Carrot</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span><del>$8.00</del></span>
+                                    <span>$5.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/3.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Fruits</a>
+                                    <a href="#">Juicy</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Fresh Red Seedless</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span>$14.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/4.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Fruits</a>
+                                    <a href="#">Juicy</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Organic Sweet Corn</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span>$8.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/5.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Fish</a>
+                                    <a href="#">Health</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Fresh Fish</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span>$25.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/6.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Seasonal</a>
+                                    <a href="#">Fruit</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Fresh Bananah</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span><del>$18.00</del></span>
+                                    <span>$13.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/7.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Seasonal</a>
+                                    <a href="#">Vegetables</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Organic Cucumber</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span>$3.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Single product -->
+
+                    <!-- Single product -->
+                    <li class="product">
+                        <div class="product-contents">
+                            <div class="product-image">
+                                <a href="shop-single.html">
+                                    <img src="{% static 'web/img/products/8.png' %}" alt="Product">
+                                </a>
+                                <div class="shop-action">
+                                    <ul>
+                                        <li class="cart">
+                                            <a href="#"><span>Add to cart</span></a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="#"><span>Add to wishlist</span></a>
+                                        </li>
+                                        <li class="quick-view">
+                                            <a href="#"><span>Quick view</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <div class="product-tags">
+                                    <a href="#">Vegetables</a>
+                                    <a href="#">Fruit</a>
+                                </div>
+                                <h4 class="product-title">
+                                    <a href="shop-single.html">Green Avocado</a>
+                                </h4>
+                                <div class="review-count">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>8 Review</span>
+                                </div>
+                                <div class="price">
+                                    <span>$6.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li> {% endcomment %}
+                    <!-- Single product -->
+
+                </ul>
+                <div class="col-tact-stye-one col-lg-7 mb-md-50 mt-5 mb-5 pb-5 center-align">
+                    <div class="contact-form-style-one">
+                        <h2 class="heading">Enquire Now</h2>
+                        <form id="inquiryForm1">
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="product" id="product"
+                                            value="{{fertilizer.name}}" readonly type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="package" placeholder="Select Package"
+                                            type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="name" placeholder="Name" type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="phoneno" placeholder="Phone" type="text"
+                                            required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" name="comment" placeholder="Message"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="submit">
+                                        <i class="fa fa-paper-plane"></i>Order Now
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Product Bottom Info  -->
+
+                <!-- End Product Bottom Info  -->
+
+                <!-- Related Product  -->
+                {% comment %} <div class="related-products carousel-shadow">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Different Packages</h3>
+                            <div class="vt-products text-center related-product-carousel swiper">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Single product -->
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="product-contents">
+                                                <div class="product-image">
+                                                    <a href="shop-single.html">
+                                                        <img src="web/img/products/1.png" alt="Product">
+                                                    </a>
+                                                    <div class="shop-action">
+                                                        <ul>
+                                                            <li class="cart">
+                                                                <a href="#"><span>Add to cart</span></a>
+                                                            </li>
+
+                                                            <li class="wishlist">
+                                                                <a href="#"><span>Add to wishlist</span></a>
+                                                            </li>
+                                                            <li class="quick-view">
+                                                                <a href="#"><span>Quick view</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-caption">
+                                                    <div class="product-tags">
+                                                        <a href="#">Crop</a>
+                                                        <a href="#">Organic</a>
+                                                    </div>
+                                                    <h4 class="product-title">
+                                                        <a href="shop-single.html">Strawberry</a>
+                                                    </h4>
+                                                    <div class="review-count">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                        <span>8 Review</span>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span>$12.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single product -->
+                                    <!-- Single product -->
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="product-contents">
+                                                <div class="product-image">
+                                                    <span class="onsale">Sale!</span>
+                                                    <a href="shop-single.html">
+                                                        <img src="web/img/products/2.png" alt="Product">
+                                                    </a>
+                                                    <div class="shop-action">
+                                                        <ul>
+                                                            <li class="cart">
+                                                                <a href="#"><span>Add to cart</span></a>
+                                                            </li>
+                                                            <li class="wishlist">
+                                                                <a href="#"><span>Add to wishlist</span></a>
+                                                            </li>
+                                                            <li class="quick-view">
+                                                                <a href="#"><span>Quick view</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-caption">
+                                                    <div class="product-tags">
+                                                        <a href="#">Vegetables</a>
+                                                        <a href="#">Winter</a>
+                                                    </div>
+                                                    <h4 class="product-title">
+                                                        <a href="shop-single.html">Organic Carrot</a>
+                                                    </h4>
+                                                    <div class="review-count">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                        <span>8 Review</span>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span><del>$8.00</del></span>
+                                                        <span>$5.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single product -->
+                                    <!-- Single product -->
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="product-contents">
+                                                <div class="product-image">
+                                                    <a href="shop-single.html">
+                                                        <img src="web/img/products/3.png" alt="Product">
+                                                    </a>
+                                                    <div class="shop-action">
+                                                        <ul>
+                                                            <li class="cart">
+                                                                <a href="#"><span>Add to cart</span></a>
+                                                            </li>
+                                                            <li class="wishlist">
+                                                                <a href="#"><span>Add to wishlist</span></a>
+                                                            </li>
+                                                            <li class="quick-view">
+                                                                <a href="#"><span>Quick view</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-caption">
+                                                    <div class="product-tags">
+                                                        <a href="#">Fruits</a>
+                                                        <a href="#">Juicy</a>
+                                                    </div>
+                                                    <h4 class="product-title">
+                                                        <a href="shop-single.html">Fresh Red Seedless</a>
+                                                    </h4>
+                                                    <div class="review-count">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                        <span>8 Review</span>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span>$14.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single product -->
+                                    <!-- Single product -->
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="product-contents">
+                                                <div class="product-image">
+                                                    <a href="shop-single.html">
+                                                        <img src="web/img/products/8.png" alt="Product">
+                                                    </a>
+                                                    <div class="shop-action">
+                                                        <ul>
+                                                            <li class="cart">
+                                                                <a href="#"><span>Add to cart</span></a>
+                                                            </li>
+                                                            <li class="wishlist">
+                                                                <a href="#"><span>Add to wishlist</span></a>
+                                                            </li>
+                                                            <li class="quick-view">
+                                                                <a href="#"><span>Quick view</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-caption">
+                                                    <div class="product-tags">
+                                                        <a href="#">Vegetables</a>
+                                                        <a href="#">Fruit</a>
+                                                    </div>
+                                                    <h4 class="product-title">
+                                                        <a href="shop-single.html">Green Avocado</a>
+                                                    </h4>
+                                                    <div class="review-count">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                        <span>8 Review</span>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span>$6.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single product -->
+                                    <!-- Single product -->
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <div class="product-contents">
+                                                <div class="product-image">
+                                                    <a href="shop-single.html">
+                                                        <img src="web/img/products/4.png" alt="Product">
+                                                    </a>
+                                                    <div class="shop-action">
+                                                        <ul>
+                                                            <li class="cart">
+                                                                <a href="#"><span>Add to cart</span></a>
+                                                            </li>
+                                                            <li class="wishlist">
+                                                                <a href="#"><span>Add to wishlist</span></a>
+                                                            </li>
+                                                            <li class="quick-view">
+                                                                <a href="#"><span>Quick view</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-caption">
+                                                    <div class="product-tags">
+                                                        <a href="#">Fruits</a>
+                                                        <a href="#">Juicy</a>
+                                                    </div>
+                                                    <h4 class="product-title">
+                                                        <a href="shop-single.html">Organic Sweet Corn</a>
+                                                    </h4>
+                                                    <div class="review-count">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                        <span>8 Review</span>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span>$8.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single product -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <!-- End Related Product  -->
+            </div>
+        </div>
+
+
+
+        <!-- End Shop -->
+    </div>
+</div>
+{% comment %} <style>
+    .img-display {
+        overflow: hidden;
+    }
+
+    .img-showcase {
+        display: flex;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+
+    .img-showcase img {
+        min-width: 100%;
+    }
+
+    .img-select {
+        display: flex;
+    }
+
+    .img-item {
+        margin: 0.3rem;
+    }
+
+    .img-item:nth-child(1),
+    .img-item:nth-child(2),
+    .img-item:nth-child(3) {
+        margin-right: 0;
+    }
+
+    .img-item:hover {
+        opacity: 0.8;
+    }
+
+    .product-content {
+        padding: 2rem 1rem;
+    }
+
+    .product-title {
+        font-size: 3rem;
+        text-transform: capitalize;
+        font-weight: 700;
+        position: relative;
+        color: #12263a;
+        margin: 1rem 0;
+    }
+
+    .product-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 80px;
+        background: #12263a;
+    }
+
+    .product-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        background: #256eff;
+        color: #fff;
+        padding: 0 0.3rem;
+        transition: all 0.5s ease;
+    }
+
+    .product-link:hover {
+        opacity: 0.9;
+    }
+
+    .product-rating {
+        color: #ffc107;
+    }
+
+    .product-rating span {
+        font-weight: 600;
+        color: #252525;
+    }
+
+    .product-price {
+        margin: 1rem 0;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .product-price span {
+        font-weight: 400;
+    }
+
+    .last-price span {
+        color: #f64749;
+        text-decoration: line-through;
+    }
+
+    .new-price span {
+        color: #256eff;
+    }
+
+    .product-detail h2 {
+        text-transform: capitalize;
+        color: #12263a;
+        padding-bottom: 0.6rem;
+    }
+
+    .product-detail p {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        opacity: 0.8;
+    }
+
+    .product-detail ul {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
+
+    .product-detail ul li {
+        margin: 0;
+        list-style: none;
+        background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+        background-size: 18px;
+        padding-left: 1.7rem;
+        margin: 0.4rem 0;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+
+    .product-detail ul li span {
+        font-weight: 400;
+    }
+
+    .purchase-info {
+        margin: 1.5rem 0;
+    }
+
+    .purchase-info input,
+    .purchase-info .btn {
+        border: 1.5px solid #ddd;
+        border-radius: 25px;
+        text-align: center;
+        padding: 0.45rem 0.8rem;
+        outline: 0;
+        margin-right: 0.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .purchase-info input {
+        width: 60px;
+    }
+
+    .purchase-info .btn {
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .purchase-info .btn:first-of-type {
+        background: #256eff;
+    }
+
+    .purchase-info .btn:last-of-type {
+        background: #f64749;
+    }
+
+    .purchase-info .btn:hover {
+        opacity: 0.9;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #000;
+        border: 1px solid #000;
+        margin: 0 0.2rem;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+    }
+
+    .social-links a:hover {
+        background: #000;
+        border-color: transparent;
+        color: #fff;
+    }
+
+    @media screen and (min-width: 992px) {
+        .card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+        }
+
+        .card-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-imgs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-content {
+            padding-top: 0;
+        }
+    }
+</style>
+<script>
+    const imgs = document.querySelectorAll('.img-select a');
+    const imgBtns = [...imgs];
+    let imgId = 1;
+
+    imgBtns.forEach((imgItem) => {
+        imgItem.addEventListener('click', (event) => {
+            event.preventDefault();
+            imgId = imgItem.dataset.id;
+            slideImage();
+        });
+    });
+
+    function slideImage() {
+        const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+        document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+    }
+
+    window.addEventListener('resize', slideImage);
+</script> {% endcomment %}
+{% endblock %}

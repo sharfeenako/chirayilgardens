@@ -1,0 +1,138 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="wrap">
+    <header class="cart-header cf">
+      <strong>Items in Your Cart</strong>
+    </header>
+    <div class="bonus-products">
+      <strong>Bonus Products Block <span class="bp-toggle">(hide this block)</span></strong>
+    </div>
+    <div class="cart-table">
+		<!-- Inside your cart.html template -->
+<!-- Inside your cart.html template -->
+<ul id="item-list">
+	{% for cart_item in cart_items %}
+	<li class="item">
+		<div class="item-main cf">
+			<div class="item-block ib-info cf">
+				<img class="product-img pb-2" src="{{ cart_item.product.product_name.product_image.url }}" alt="{{ cart_item.product.product_name }}">
+				<div class="ib-info-meta">
+					<span class="title">{{ cart_item.product.product_name }}</span>
+					<span class="title">{{ cart_item.product.inch }}</span>
+
+				</div>
+			</div>
+			<div class="item-block ib-qty pt-4">
+				<a href="{% url 'web:item_decrement' cart_item.product.id %}">
+					<input type="hidden" name="product_id" value="{{ cart_item.product.id }}">
+					<input type="submit" value="-" class="qty-button">
+				</a>
+				<span class="qty">{{ cart_item.quantity }}</span>
+				<a href="{% url 'web:add_to_cart' cart_item.product.id %}">
+					<input type="hidden" name="product_id" value="{{ cart_item.product.id }}">
+					<input type="submit" value="+" class="qty-button">
+				</a>
+			</div>
+			<div class="item-block ib-total-price pt-4">
+				<span class="tp-price">₹<span class="total-price1">{{ cart_item.total }}</span></span>
+				<a href="{% url 'web:item_clear' cart_item.product.id %}" class="remove-btn ps-5">Remove</a>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+
+	{% for cart_fertilizer in cart_fertilizers %}
+	<li class="item">
+		<div class="item-main cf">
+			<div class="item-block ib-info cf">
+				<img class="product-img pb-2" src="{{ cart_fertilizer.fertilizer.name.image.url }}" alt="{{ cart_fertilizer.fertilizer.name }}">
+				<div class="ib-info-meta">
+					<span class="title">{{ cart_fertilizer.fertilizer.name }}</span>
+					<span class="title">{{ cart_fertilizer.fertilizer.inch }}</span>
+
+				</div>
+			</div>
+			<div class="item-block ib-qty pt-4">
+				<a href="{% url 'web:item_decrement' cart_fertilizer.fertilizer.id %}">
+					
+					<input type="hidden" name="product_id" value="{{ cart_fertilizer.fertilizer.id }}">
+					<input type="submit" value="-" class="qty-button">
+				</a>
+				<span class="qty">{{ cart_fertilizer.quantity }}</span>
+				<a href="{% url 'web:fertilizer_cart' cart_fertilizer.fertilizer.id %}">
+					
+					<input type="hidden" name="product_id" value="{{ cart_fertilizer.fertilizer.id }}">
+					<input type="submit" value="+" class="qty-button">
+				</a>
+			</div>
+			<div class="item-block ib-total-price pt-4">
+				<span class="tp-price">₹<span class="total-price1">{{ cart_fertilizer.total }}</span></span>
+				<a href="{% url 'web:item_clear' cart_fertilizer.fertilizer.id %}" class="remove-btn ps-5">Remove</a>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+	{% for cart_medicine in cart_medicines %}
+	<li class="item">
+		<div class="item-main cf">
+			<div class="item-block ib-info cf">
+				<img class="product-img pb-2" src="{{ cart_medicine.medicine.name.image.url }}" alt="{{ cart_medicine.medicine.name }}">
+				<div class="ib-info-meta">
+					<span class="title">{{ cart_medicine.medicine.name }}</span>
+					<span class="title">{{ cart_medicine.medicine.inch }}</span>
+
+				</div>
+			</div>
+			<div class="item-block ib-qty pt-4">
+				<a href="{% url 'web:item_decrement' cart_medicine.medicine.id %}">
+				
+					<input type="hidden" name="product_id" value="{{ cart_medicine.medicine.id }}">
+					<input type="submit" value="-" class="qty-button">
+				</a>
+				<span class="qty">{{ cart_medicine.quantity }}</span>
+				<a href="{% url 'web:medicine_cart' cart_medicine.medicine.id %}">
+				
+					<input type="hidden" name="product_id" value="{{ cart_medicine.medicine.id }}">
+					<input type="submit" value="+" class="qty-button">
+				</a>
+			</div>
+			<div class="item-block ib-total-price pt-4">
+				<span class="tp-price">₹<span class="total-price1">{{ cart_medicine.total }}</span></span>
+				<a href="{% url 'web:item_clear' cart_medicine.medicine.id %}" class="remove-btn ps-5">Remove</a>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+      </ul>
+    </div>
+    <div class="sub-table cf">
+      <div class="summary-block">
+
+        <ul>
+          {% comment %} <li class="subtotal"><span class="sb-label">Subtotal</span><span class="sb-value">$25.99</span></li>
+          <li class="shipping"><span class="sb-label">Shipping</span><span class="sb-value">n/a</span></li>
+          <li class="tax"><span class="sb-label">Est. Tax | <span class="tax-edit">edit <i class="i-notch-down"></i></span></span><span class="sb-value">$5.00</span></li>
+          <li class="tax-calculate"><input type="text" value="06484" class="tax" /><span class="btn">Calculate</span></li> {% endcomment %}
+          {% comment %} <li class="grand-total">
+            <span class="sb-label">Total</span> {% endcomment %}
+			<a href="{% url 'web:cart_clear' %}"class="btn btn-theme">Clear Cart</a>
+
+            <li class="grand-total">
+                <span class="sb-label">Total</span>
+                <span class="sb-value">₹<span id="total-amount">{{ total_price }}</span>
+            </li>       
+       </ul>
+      </div>
+    </div>
+    <div class="cart-footer cf">
+        <a href="{% url 'web:checkout' %}"class="btn btn-theme">Checkout</a>
+        <span class="cont-shopping"><i class="i-angle-left"></i><a href="{% url 'web:shop' %}">Continue Shopping</span></a>
+    </div>
+  </div>
+  <link href="{% static 'web/css/cart.css' %}" rel="stylesheet">
+
+{% endblock %}

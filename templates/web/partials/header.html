@@ -1,0 +1,192 @@
+{% load static %}
+
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Preloader Start -->
+    {% comment %} <div class="se-pre-con"></div> {% endcomment %}
+    <!-- Preloader Ends -->
+
+    <!-- Header
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav inc-shape navbar-common navbar-sticky navbar-default validnavs">
+
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container-xl">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+            <div class="container-full d-flex justify-content-between align-items-center">
+
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'web:index' %}">
+                        <img src="{% static 'web/img/logo.svg' %}" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="{% static 'web/img/logo.svg' %}" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="dropdown-toggle {% if is_index %} active{% endif %}">
+                            <a href="{% url 'web:index' %}" >Home</a>
+
+                        </li>
+                        <li class="dropdown-toggle {% if is_about %} active{% endif %}">
+                            <a href="{% url 'web:about' %}"  >About</a>
+
+                        </li>
+                        <li class="dropdown-toggle {% if is_shop %} active{% endif %}">
+                            <a href="{% url 'web:shop' %}" >Products</a>
+
+                        </li>
+
+                        <li class="dropdown-toggle {% if is_guide %} active{% endif %}">
+                            <a href="{% url 'web:guide' %}"  >Buyer's Guide</a>
+
+                        </li>
+                        <li class="dropdown-toggle {% if is_fertilizer %} active{% endif %}">
+                            <a href="{% url 'web:substance' %}"  >Fertilizer & Medicine</a>
+
+                        </li>
+
+                        <li class="dropdown-toggle {% if is_updates %} active{% endif %}">
+                            <a href="{% url 'web:updates' %}"  >Updates</a>
+
+                        </li>
+
+                        <li class="dropdown-toggle {% if is_gallery %} active{% endif %}">
+                            <a href="{% url 'web:gallery' %}"  >Gallery</a>
+
+                        </li>
+                        <li class="dropdown-toggle {% if is_connect %} active{% endif %}">
+                            <a href="{% url 'web:contact' %}"  >Connect</a>
+
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="attr-right">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="dropdown">
+                                <a href="{% url 'web:cart' %}" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="far fa-shopping-cart"></i>
+                                    <span class="badge" id="cart-badge">0</span>
+                                </a>
+                                
+                                <!-- ... dropdown content ... -->
+                            </li>
+                            {% comment %} <li class="search"><a href="#"><i class="far fa-search"></i></a></li> {% endcomment %}
+                           <li class="side-menu">
+                                <a href="#">
+                                    <span class="bar-1"></span>
+                                    <span class="bar-2"></span>
+                                    <span class="bar-3"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+
+                    <!-- Start Side Menu -->
+                    <div class="side">
+                        <a href="#" class="close-side"><i class="icon_close"></i></a>
+                        <div class="widget">
+                            <div class="logo">
+                                <img src="{% static 'web/img/logo.svg' %}" alt="Logo">
+                            </div>
+                            <p>
+                                We are well-equipped to transform your outdoor space into a vibrant oasis. Whether you have a small residential garden or a large commercial landscape, we approach each project with creativity, attention to detail, and a personalized touch.
+                            </p>
+                        </div>
+                        <div class="widget address">
+                            <div>
+                                <ul>
+                                    <li>
+                                        <div class="content">
+                                            <p>Address</p>
+                                            - Amarachal, Chirayil Chungam-Cherekad Road Chirayil, PO, Kondotty, Kerala 673638<br>
+
+                                             - 004,Chirayil Tower Pandikkad Wandoor Road, Ayanikkode, Bridge, near Kakkathode, Kerala 676521<br>
+                                        - 46QP+QC9, Valanchery - Nilambur Rd, Kerala 679327
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <p>Email</p>
+                                            <strong>chirayilgardens@gmail.com</strong><br>
+                                            <strong>rehmanmody@gmail.com</strong>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content">
+                                            <p>Contact</p>
+                                            <strong>8589993015</strong><br>
+                                            <strong>8725800500</strong>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% comment %} <div class="widget newsletter">
+                            <h4 class="title">Get Subscribed!</h4>
+                            <form action="#">
+                                <div class="input-group stylish-input-group">
+                                    <input type="email" placeholder="Enter your e-mail" class="form-control" name="email">
+                                    <span class="input-group-addon">
+                                        <button type="submit">
+                                            <i class="arrow_right"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div> {% endcomment %}
+                        <div class="widget social">
+                            <ul class="link">
+                                <li><a href="https://www.facebook.com/profile.php?id=100093315071280&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://instagram.com/chirayil_gardens?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" target="_blank"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Side Menu -->
+
+                </div>
+                <!-- Main Nav -->
+
+            </div>
+
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->

@@ -1,0 +1,191 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<div class="gallery-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+  
+          <div class="site-heading text-center">
+  
+            {% comment %} <h5 class="sub-title pt-5">Checkout Form</h5> {% endcomment %}
+            <h2 class="title">Checkout Form</h2>
+            <div class="devider"></div>
+          </div>
+        </div>
+      </div>
+  
+    <div class="row">
+      <div class="col-md-5 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Your cart</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3" id="item">
+            {% for item in cart_items %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed item">
+                <div>
+                  <div style="display: flex; align-items: center;">
+    
+                    <h6 class="my-0" style="margin-right: 10px;">{{ item.product.product_name }}</h6>
+                    <input type="text" readonly value="{{ item.quantity }}"class="qty" data-item-id="{{ item.id }}" data-price="{{ item.product.price }}" style="border: none; background-color: transparent; width: auto;">
+                    <span>{{ item.product.inch }}</span>
+
+                </div>
+                {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                    {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                </div>
+                <span class="text-muted total-price">₹{{ item.total }}</span>
+            </li>
+            {% endfor %}
+            {% for item in cart_fertilizers %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed item">
+                <div>
+                  <div style="display: flex; align-items: center;">
+    
+                    <h6 class="my-0" style="margin-right: 10px;">{{ item.fertilizer.name }}</h6>
+                    <input type="text" readonly value="{{ item.quantity }}"class="qty" data-item-id="{{ item.id }}" data-price="{{ item.fertilzer.price }}" style="border: none; background-color: transparent; width: auto;">
+                    <span>{{ item.fertilizer.inch }}</span>
+
+                </div>
+                {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                    {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                </div>
+                <span class="text-muted total-price">₹{{ item.total }}</span>
+            </li>
+            {% endfor %}
+            {% for item in cart_medicines %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed item">
+                <div>
+                  <div style="display: flex; align-items: center;">
+    
+                    <h6 class="my-0" style="margin-right: 10px;">{{ item.medicine.name }}</h6>
+                    <input type="text" readonly value="{{ item.quantity }}"class="qty" data-item-id="{{ item.id }}" data-price="{{ item.medicine.price }}" style="border: none; background-color: transparent; width: auto;">
+                    <span>{{ item.medicine.inch }}</span>
+
+                </div>
+                {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                    {% comment %} <span class="text-muted price">${{ item.product.price }}</span> {% endcomment %}
+                </div>
+                <span class="text-muted total-price">₹{{ item.total }}</span>
+            </li>
+            {% endfor %}
+            <li class="list-group-item d-flex justify-content-between">
+                <span class="sb-value"><span id="total-amount">Total : ₹{{ total_price }}</span></span>
+            </li>
+        </ul> 
+      
+      {% comment %} <span class="sb-value">Total: ₹<span id="total-amount"></span></span> {% endcomment %}
+  
+  <form class="">
+          <div class="">
+  
+            <div class="input-group-append">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-tact-stye-one col-lg-7 mb-md-50 mb-5 pb-5">
+        <div class="contact-form-style-one">
+            <h5 class="sub-title">Have Questions?</h5>
+            <h2 class="heading">Enquire now</h2>
+            <form id="whatsappform">
+                <div class="row">
+                   <div class="col-lg-12">
+                      <div class="form-group">
+                         <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                         <span class="alert-error"></span>
+                      </div>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-6">
+                      <div class="form-group">
+                         <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
+                         <span class="alert-error"></span>
+                      </div>
+                   </div>
+                   <div class="col-lg-6">
+                      <div class="form-group">
+                         <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text" required>
+                         <span class="alert-error"></span>
+                      </div>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <div class="form-group comments">
+                         <textarea class="form-control" id="comments" name="message" placeholder="Write your Comment *   " required></textarea>
+                      </div>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <button id="sendMessageButton">Send Message to WhatsApp</button>
+                   </div>
+                </div>
+                <!-- Alert Message -->
+                <div class="col-lg-12 alert-notification">
+                   <div id="message" class="alert-msg"></div>
+                </div>
+             </form>
+            {% comment %} {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <script>
+                    swal("Successfully Submitted!", "Thank You, Our Team Will Contact you Soon!", "success");
+  
+                </script>
+                {% endfor %}
+            </ul>
+            {% endif %} {% endcomment %}
+        </div>
+    </div>
+    </div>
+  
+  
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("whatsappform").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form submission
+    
+        var form = this;
+        var formData = new FormData(form);
+    
+        var whatsappMessage = "Service Inquiry:\n\n";
+        formData.forEach(function (value, key) {
+          whatsappMessage += key + ": " + value + "\n";
+        });
+  
+        {% for item in cart_items %}
+        whatsappMessage += "{{ item.product.product_name }} (Qty: {{ item.quantity }}, Inch: {{ item.product.inch }}) - ₹{{ item.total }}\n";
+        {% endfor %}
+  
+        {% for item in cart_fertilizers %}
+        whatsappMessage += "{{ item.fertilizer.name }} (Qty: {{ item.quantity }}, Inch: {{ item.fertilizer.inch }}) - ₹{{ item.total }}\n";
+        {% endfor %}
+        
+        {% for item in cart_medicines %}
+        whatsappMessage += "{{ item.medicine.name }} (Qty: {{ item.quantity }}, Inch: {{ item.medicine.inch }}) - ₹{{ item.total }}\n";
+        {% endfor %}
+
+        var totalAmount = document.getElementById("total-amount").innerText;
+        whatsappMessage += totalAmount;
+    
+        var whatsappNumber = "+9072924563"; // Replace with your WhatsApp number
+        var templateMessage = encodeURIComponent(whatsappMessage);
+    
+        var whatsappURL =
+          "https://api.whatsapp.com/send?phone=" +
+          whatsappNumber +
+          "&text=" +
+          templateMessage;
+    
+        window.open(whatsappURL, "_blank");
+      });
+    });
+  </script>
+     
+{% endblock %}

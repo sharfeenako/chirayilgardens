@@ -1,0 +1,62 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="gallery-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+
+        <div class="site-heading text-center">
+
+          <h5 class="sub-title pt-5">BUYER'S GUIDE</h5>
+          <h2 class="title">Frequently Asked Questions</h2>
+          <div class="devider"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Blog
+    ============================================= -->
+
+    <div class="choose-us-style-one-area mb-5 pb-5" style="margin-top:-50px;">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+
+          <div class="col-lg-9">
+            <div class="accordion accordion-regular mt-35" id="faqAccordion">
+
+              <div class="accordion-item">
+                {% for faq in faq %}
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                    <button class="{% if forloop.first %} accordion-button  {%else %} accordion-button  collapsed {% endif %}" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse{{ forloop.counter }}" {% if forloop.first %} aria-expanded="true" {%else %} aria-expanded="false" {% endif %} aria-controls="collapse{{ forloop.counter }}">
+                      {{ faq.question }}
+                    </button>
+                  </h2>
+                  <div id="collapse{{ forloop.counter }}"
+                    class="accordion-collapse collapse {% if forloop.first %} show {% endif %}"
+                    aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      <p>
+                        {{ faq.answer }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </center>
+  </div>
+</div>
+
+{% endblock %}

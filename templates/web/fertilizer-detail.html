@@ -1,0 +1,179 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="gallery-area">
+    <div class="container">
+        <div class="validtheme-shop-single-area mt-5 pt-5">
+            <div class="container">
+                <div class="product-details">
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <div class="product-thumb">
+                                <div class="item-box">
+                                    <div class="product-item">
+                                        <a href="{{fertilizer.image.url}}" class="item popup-gallery">
+                                            <img src="{{fertilizer.image.url}}" alt="Thumb">
+                                        </a>
+                                        {% comment %} <span class="onsale theme">16%</span> {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="single-product-contents">
+
+                                <h2 class="product-title">
+                                    {{fertilizer.name}}
+                                </h2>
+                                <div class="summary-top-box">
+                                    <div class="product-tags">
+                                        {{fertilizer.product_name}}
+                                    </div>
+
+                                </div>
+                                <div class="price">
+                                    <span>₹ {{fertilizer.price}}</span>
+                                </div>
+                                <div class="product-stock validthemes-in-stock">
+                                </div>
+                                <p>
+                                    {{fertilizer.description}}</p>
+                                    <div class="product-purchase-list">
+                  
+                                        <button class="btn secondary btn-theme btn-sm animation" id="addcart">
+                                          <i class="fas fa-shopping-cart"></i>
+                                          Add to cart
+                                        </button>
+                                        <select class="mt-4" id="package-select">
+                                            <option value="">Select an inch</option>
+                                            {% for package in packages %}
+                                                <option value="{{ package.id }}" data-price="{{ package.price }}">
+                                                    {{ package.inch }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                        <div id="selected-price"></div>
+                                <div class="product-estimate-delivary">
+                                    <i class="fas fa-box-open"></i>
+                                    <strong> 2-day Delivery</strong>
+                                    <span>Speedy and reliable delivery!</span>
+                                </div>
+                                <div class="product-meta">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="vt-products text-center columns-4">
+
+                </ul>
+                <div class="col-tact-stye-one col-lg-7 mb-md-50 mt-5 mb-5 pb-5 center-align">
+                    <div class="contact-form-style-one">
+                        <h2 class="heading">Enquire Now</h2>
+                        <form id="inquiryForm1">
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="product" id="product"
+                                            value="{{fertilizer.name}}" readonly type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="package" placeholder="Select Package"
+                                            type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="name" placeholder="Name" type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="phoneno" placeholder="Phone" type="text"
+                                            required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" name="comment" placeholder="Message"
+                                            required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="submit">
+                                        <i class="fa fa-paper-plane"></i>Order Now
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- End Shop -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const packageSelects = document.querySelectorAll(".package-select");
+        const selectedPriceElements = document.querySelectorAll(".selected-price");
+  
+        packageSelects.forEach(function (select) {
+            select.addEventListener("change", function () {
+                const selectedOption = select.options[select.selectedIndex];
+                const selectedPrice = parseFloat(selectedOption.getAttribute("data-price"));
+                const cartItemId = select.getAttribute("data-cart-item-id");
+                const selectedPriceElement = document.querySelector(`[data-cart-item-id="${cartItemId}"] .selected-price`);
+  
+                if (!isNaN(selectedPrice)) {
+                    selectedPriceElement.textContent = `Selected Price: ₹${selectedPrice.toFixed(2)}`;
+                } else {
+                    selectedPriceElement.textContent = "";
+                }
+            });
+        });
+    });
+  </script>
+  <script>
+    $("#addcart").click(function () {
+      // const host = window.location.hostname
+      const host = "http://127.0.0.1:8000";
+      var product = $("#package-select").val();
+      if (product) {
+        var url = host + "/cart/fertilizer/" + product + "/";
+        console.log(url);
+        window.location.href = url;
+      } else {
+        alert("please select inch");
+      }
+    });
+  </script>
+{% endblock %}

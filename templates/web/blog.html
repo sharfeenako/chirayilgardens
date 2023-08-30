@@ -1,0 +1,188 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+    <div class="gallery-area">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+                <h5 class="sub-title pt-5">Our Updates</h5>
+                <h2 class="title">Latest News and updates</h2>
+                <div class="devider"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Blog 
+    ============================================= -->
+    <div class="blog-area blog-grid full-blog pb-5 mb-5">
+        <div class="container">
+            <div class="blog-item-box">
+                <div class="row">
+                    <!-- Single Item -->
+                    {% for updates in updates %}
+                    <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="{% url 'web:update_detail' updates.id %}"><img src="{{updates.update_image.url}}" alt="Image Not Found"></a>
+                                <div class="date"><strong>{{updates.day}}</strong> <span>{{updates.month}}</span></div>
+                            </div>
+                            <div class="info">
+                                
+                                <h3 class="title">
+                                    <a href="{% url 'web:update_detail' updates.id %}">{{updates.update_head}}</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Single Item -->
+                    <!-- Single Item -->
+                    {% comment %} <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="blog-single-with-sidebar.html"><img src="{% static 'web/img/blog/3.jpg' %}" alt="Image Not Found"></a>
+                                <div class="date"><strong>08</strong> <span>Jul, 22</span></div>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-comments"></i> 12 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title">
+                                    <a href="blog-single-with-sidebar.html">Minuter him own clothes but observe country.</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="blog-single-with-sidebar.html"><img src="{% static 'web/img/blog/2.jpg' %}" alt="Image Not Found"></a>
+                                <div class="date"><strong>26</strong> <span>Aug, 22</span></div>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-comments"></i> 45 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title">
+                                    <a href="blog-single-with-sidebar.html">Overcame breeding point concerns has terminate</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="blog-single-with-sidebar.html"><img src="{% static 'web/img/blog/1.jpg' %}" alt="Image Not Found"></a>
+                                <div class="date"><strong>28</strong> <span>Sep, 22</span></div>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-comments"></i> 33 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title">
+                                    <a href="blog-single-with-sidebar.html">Announcing if attachment resolution sentiments.</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="blog-single-with-sidebar.html"><img src="{% static 'web/img/blog/5.jpg' %}" alt="Image Not Found"></a>
+                                <div class="date"><strong>22</strong> <span>Aug, 22</span></div>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-comments"></i> 66 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title">
+                                    <a href="blog-single-with-sidebar.html">Minuter him own clothes but observe country.</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-xl-4 col-md-6 single-item">
+                        <div class="blog-style-one">
+                            <div class="thumb">
+                                <a href="blog-single-with-sidebar.html"><img src="{% static 'web/img/blog/6.jpg' %}" alt="Image Not Found"></a>
+                                <div class="date"><strong>08</strong> <span>Dec, 22</span></div>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="fas fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-comments"></i> 68 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title">
+                                    <a href="blog-single-with-sidebar.html">Overcame breeding point concerns has terminate</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    <!-- Single Item -->
+                </div>
+            </div>
+            <!-- Pagination -->
+            {% comment %} <div class="row">
+                <div class="col-md-12 pagi-area text-center">
+                    <nav aria-label="navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="blog-3-colum.html"><i class="fas fa-angle-double-left"></i></a></li>
+                            <li class="page-item active"><a class="page-link" href="blog-3-colum.html">1</a></li>
+                            <li class="page-item"><a class="page-link" href="blog-3-colum.html">2</a></li>
+                            <li class="page-item"><a class="page-link" href="blog-3-colum.html">3</a></li>
+                            <li class="page-item"><a class="page-link" href="blog-3-colum.html"><i class="fas fa-angle-double-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> {% endcomment %}
+            <!-- End Pagination -->
+        </div>
+    </div>
+    <!-- End Blog -->
+</div>
+</div>
+{% endblock %}
